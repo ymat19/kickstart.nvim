@@ -8,11 +8,13 @@ vim.o.expandtab = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
-vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.undofile = true
 vim.opt.termguicolors = true
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
 -- key bindings
 vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true, silent = true })
@@ -22,3 +24,25 @@ vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<CR>', ':nohlsearch<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', 'L', ':bnext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', 'H', ':bprevious<CR>', { noremap = true, silent = true })
+
+-- Common Pugins
+require('substitute').setup {}
+
+-- avoid confilict: surround, leap
+require('nvim-surround').setup {}
+vim.api.nvim_del_keymap('v', 'S')
+vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
+
+-- substitute-nvim
+vim.keymap.set('n', 'rr', require('substitute').operator, { noremap = true })
+vim.keymap.set('n', 'R', require('substitute').eol, { noremap = true })
+vim.keymap.set('n', 'RR', require('substitute').line, { noremap = true })
+vim.keymap.set('x', 'rr', require('substitute').visual, { noremap = true })
+
+-- clever-f
+vim.g.clever_f_smart_case = 1
+vim.g.clever_f_fix_key_direction = 1
+vim.g.clever_f_chars_match_any_signs = ';'
+vim.keymap.set('n', ';', '<Plug>(clever-f-repeat-forward)', { noremap = false })
+vim.keymap.set('n', ',', '<Plug>(clever-f-repeat-back)', { noremap = false })
