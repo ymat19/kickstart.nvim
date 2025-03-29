@@ -341,13 +341,18 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>b', group = 'Buffer' },
+        { '<leader>c', group = 'Copilot' },
+        { '<leader>g', group = 'Jump' },
+        { '<leader>p', group = 'Favorite Pickers' },
+        { '<leader>u', group = 'Toggle' },
+        --{ '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
+        --{ '<leader>d', group = '[D]ocument' },
+        --{ '<leader>r', group = '[R]ename' },
+        { '<leader>s', group = 'Search' },
+        --{ '<leader>w', group = '[W]orkspace' },
+        --{ '<leader>t', group = '[T]oggle' },
+        --{ '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
   },
@@ -751,7 +756,7 @@ require('lazy').setup({
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
         mode = '',
-        desc = '[F]ormat buffer',
+        desc = 'Format buffer',
       },
     },
     opts = {

@@ -26,7 +26,7 @@ return {
     },
   },
   keys = {
-    -- Top Pickers & Explorer
+    -- top level binds
     {
       '<leader><space>',
       function()
@@ -35,39 +35,97 @@ return {
       desc = 'Smart Find Files',
     },
     {
-      '<leader>,',
+      '<leader>e',
       function()
-        Snacks.picker.buffers()
+        Snacks.explorer()
       end,
-      desc = 'Buffers',
+      desc = 'File Explorer',
     },
     {
       '<leader>/',
       function()
         Snacks.picker.grep()
       end,
-      desc = 'Grep',
+      desc = 'Live Grep',
     },
     {
-      '<leader>:',
+      '<leader>*',
+      function()
+        Snacks.picker.grep_word()
+      end,
+      desc = 'Visual selection or word',
+      mode = { 'n', 'x' },
+    },
+    {
+      '<leader>g',
+      function()
+        Snacks.picker.jumps()
+      end,
+      desc = 'Jumps',
+    },
+    {
+      '<leader>m',
+      function()
+        Snacks.picker.marks()
+      end,
+      desc = 'Marks',
+    },
+    {
+      '<leader>"',
+      function()
+        Snacks.picker.registers()
+      end,
+      desc = 'Registers',
+    },
+    -- useful pickers
+    {
+      '<leader>pr',
+      function()
+        Snacks.picker.recent()
+      end,
+      desc = 'Recent',
+    },
+    {
+      '<leader>pl',
+      function()
+        Snacks.picker.git_log_line()
+      end,
+      desc = 'Git Log Line',
+    },
+    {
+      '<leader>pb',
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = 'Buffers',
+    },
+    {
+      '<leader>p:',
       function()
         Snacks.picker.command_history()
       end,
       desc = 'Command History',
     },
     {
-      '<leader>n',
+      '<leader>pn',
       function()
         Snacks.picker.notifications()
       end,
       desc = 'Notification History',
     },
     {
-      '<leader>e',
+      '<leader>p.',
       function()
-        Snacks.explorer()
+        Snacks.scratch()
       end,
-      desc = 'File Explorer',
+      desc = 'Toggle Scratch Buffer',
+    },
+    {
+      '<leader>pS',
+      function()
+        Snacks.scratch.select()
+      end,
+      desc = 'Select Scratch Buffer',
     },
     -- find
     {
@@ -392,34 +450,6 @@ return {
       desc = 'LSP Workspace Symbols',
     },
     -- Other
-    {
-      '<leader>.',
-      function()
-        Snacks.scratch()
-      end,
-      desc = 'Toggle Scratch Buffer',
-    },
-    {
-      '<leader>S',
-      function()
-        Snacks.scratch.select()
-      end,
-      desc = 'Select Scratch Buffer',
-    },
-    {
-      '<leader>n',
-      function()
-        Snacks.notifier.show_history()
-      end,
-      desc = 'Notification History',
-    },
-    {
-      '<leader>bd',
-      function()
-        Snacks.bufdelete()
-      end,
-      desc = 'Delete Buffer',
-    },
     {
       '<leader>gB',
       function()
