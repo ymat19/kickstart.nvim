@@ -93,13 +93,6 @@ return {
       desc = 'Git Log Line',
     },
     {
-      '<leader>pb',
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = 'Buffers',
-    },
-    {
       '<leader>p:',
       function()
         Snacks.picker.command_history()
@@ -450,6 +443,20 @@ return {
       desc = 'LSP Workspace Symbols',
     },
     -- buffer
+    {
+      '<leader>bb',
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = 'Buffers',
+    },
+    {
+      '<leader>bs',
+      function()
+        Snacks.picker.grep_buffers()
+      end,
+      desc = 'Grep Open Buffers',
+    },
     {
       '<leader>bd',
       function()
