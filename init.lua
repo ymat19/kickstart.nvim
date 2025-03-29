@@ -341,10 +341,11 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
+        { '<leader>f', group = 'Find' },
         { '<leader>b', group = 'Buffer' },
         { '<leader>c', group = 'Copilot' },
         { '<leader>g', group = 'Jump' },
-        { '<leader>p', group = 'Favorite Pickers' },
+        { '<leader>p', group = 'Favorites' },
         { '<leader>u', group = 'Toggle' },
         --{ '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         --{ '<leader>d', group = '[D]ocument' },
@@ -751,7 +752,7 @@ require('lazy').setup({
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>f',
+        '<leader>pf',
         function()
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,

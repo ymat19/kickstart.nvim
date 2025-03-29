@@ -449,6 +449,14 @@ return {
       end,
       desc = 'LSP Workspace Symbols',
     },
+    -- buffer
+    {
+      '<leader>bd',
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = 'Delete Buffer',
+    },
     -- Other
     {
       '<leader>gB',
