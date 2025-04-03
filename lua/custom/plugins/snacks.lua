@@ -522,6 +522,13 @@ return {
       end,
       desc = 'Delete Buffer',
     },
+    {
+      '<leader>bd',
+      function()
+        Snacks.bufdelete.other()
+      end,
+      desc = 'Delete Other',
+    },
     -- Other
     {
       '<leader>gB',
