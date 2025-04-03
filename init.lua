@@ -348,6 +348,7 @@ require('lazy').setup({
         { '<leader>c', group = 'Copilot', mode = { 'n', 'x' } },
         { '<leader>g', group = 'Git', mode = { 'n', 'x' } },
         { '<leader>u', group = 'Toggle' },
+        { '<leader>d', group = 'Diff' },
         --{ '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         --{ '<leader>d', group = '[D]ocument' },
         --{ '<leader>r', group = '[R]ename' },

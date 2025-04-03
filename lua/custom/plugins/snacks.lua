@@ -56,7 +56,7 @@ return {
             end
           end,
           term_normal = {
-            '<esc>',
+            'j',
             function(self)
               self.esc_timer = self.esc_timer or (vim.uv or vim.loop).new_timer()
               if self.esc_timer:is_active() then
@@ -64,7 +64,7 @@ return {
                 vim.cmd 'stopinsert'
               else
                 self.esc_timer:start(200, 0, function() end)
-                return '<esc>'
+                return 'j'
               end
             end,
             mode = 't',
@@ -177,6 +177,13 @@ return {
         Snacks.scratch.select()
       end,
       desc = 'Select Scratch Buffer',
+    },
+    {
+      '<leader>pp',
+      function()
+        Snacks.picker.picker()
+      end,
+      desc = 'Select Picker',
     },
     -- find
     {
